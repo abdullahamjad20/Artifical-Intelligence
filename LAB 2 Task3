@@ -1,0 +1,101 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPx61gwNFbl2bx59BrVSfvE",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/abdullahamjad20/Artifical-Intelligence/blob/main/LAB%202%20Task3\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "import random\n",
+        "\n",
+        "def reflex_agent(position, rooms):\n",
+        "    if rooms[position] == \"Dirty\":\n",
+        "        return \"Suck\"\n",
+        "    return \"Right\" if position == \"A\" else \"Left\"\n",
+        "\n",
+        "def perform_action(position, rooms, action):\n",
+        "    if action == \"Suck\":\n",
+        "        rooms[position] = \"Clean\"\n",
+        "    elif action == \"Left\":\n",
+        "        position = \"A\"\n",
+        "    elif action == \"Right\":\n",
+        "        position = \"B\"\n",
+        "    return position\n",
+        "\n",
+        "def run_agent(agent_type, position, initial_rooms, steps=20):\n",
+        "    rooms = initial_rooms.copy()\n",
+        "    score = 0\n",
+        "\n",
+        "    for _ in range(steps):\n",
+        "        if agent_type == \"Reflex\":\n",
+        "            action = reflex_agent(position, rooms)\n",
+        "        else:\n",
+        "            action = random.choice([\"Left\", \"Right\", \"Suck\"])\n",
+        "\n",
+        "        position = perform_action(position, rooms, action)\n",
+        "        score += sum(1 for room in rooms.values() if room == \"Clean\")\n",
+        "\n",
+        "    return score\n",
+        "\n",
+        "random.seed(42)\n",
+        "\n",
+        "reflex_scores = []\n",
+        "random_scores = []\n",
+        "\n",
+        "print(\"Trial | Initial Position | Room A | Room B | Reflex Score | Random Score\")\n",
+        "\n",
+        "for trial in range(1, 11):\n",
+        "    position = random.choice([\"A\", \"B\"])\n",
+        "    rooms = {\n",
+        "        \"A\": random.choice([\"Clean\", \"Dirty\"]),\n",
+        "        \"B\": random.choice([\"Clean\", \"Dirty\"])\n",
+        "    }\n",
+        "\n",
+        "    reflex_score = run_agent(\"Reflex\", position, rooms)\n",
+        "    random_score = run_agent(\"Random\", position, rooms)\n",
+        "\n",
+        "    reflex_scores.append(reflex_score)\n",
+        "    random_scores.append(random_score)\n",
+        "\n",
+        "    print(\n",
+        "        f\"{trial:5} | {position:16} | \"\n",
+        "        f\"{rooms['A']:6} | {rooms['B']:6} | \"\n",
+        "        f\"{reflex_score:12} | {random_score:12}\"\n",
+        "    )\n",
+        "\n",
+        "print(\"\\nAverage Performance Scores\")\n",
+        "print(f\"Reflex Agent: {sum(reflex_scores) / 10:.2f}\")\n",
+        "print(f\"Random Agent: {sum(random_scores) / 10:.2f}\")\n"
+      ],
+      "metadata": {
+        "id": "8OAg7JLZGusH"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
