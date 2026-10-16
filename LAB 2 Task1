@@ -1,0 +1,74 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMd66m0c8579Ir9zab7B5Qh",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/abdullahamjad20/Artifical-Intelligence/blob/main/LAB%202%20Task1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "# AI Lab Assignment\n",
+        "# Topic: Exploring Two AI Tools\n",
+        "\n",
+        "# AI Tool 1: Google Lens\n",
+        "print(\"========== AI TOOL 1: GOOGLE LENS ==========\")\n",
+        "\n",
+        "tool1 = \"Google Lens\"\n",
+        "input1 = \"An image of a cat\"\n",
+        "output1 = \"Google Lens identifies the image as a cat.\"\n",
+        "technique1 = \"Computer Vision and Image Recognition\"\n",
+        "limitation1 = \"It may give incorrect results if the image is unclear.\"\n",
+        "\n",
+        "print(\"Tool Name:\", tool1)\n",
+        "print(\"Input:\", input1)\n",
+        "print(\"Output:\", output1)\n",
+        "print(\"AI Technique Used:\", technique1)\n",
+        "print(\"Limitation:\", limitation1)\n",
+        "\n",
+        "# AI Tool 2: ChatGPT\n",
+        "print(\"\\n========== AI TOOL 2: CHATGPT ==========\")\n",
+        "\n",
+        "tool2 = \"ChatGPT\"\n",
+        "input2 = \"What is Artificial Intelligence?\"\n",
+        "output2 = \"Artificial Intelligence is the ability of machines\"\n",
+        "output2 += \" to perform tasks that normally require human intelligence.\"\n",
+        "technique2 = \"Natural Language Processing and Deep Learning\"\n",
+        "limitation2 = \"It may sometimes generate incorrect information.\"\n",
+        "\n",
+        "print(\"Tool Name:\", tool2)\n",
+        "print(\"Input:\", input2)\n",
+        "print(\"Output:\", output2)\n",
+        "print(\"AI Technique Used:\", technique2)\n",
+        "print(\"Limitation:\", limitation2)\n"
+      ],
+      "metadata": {
+        "id": "8OAg7JLZGusH"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
